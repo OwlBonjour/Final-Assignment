@@ -32,25 +32,25 @@ int StackisEmpty(SqStack S) {
 }
 
 int StackLength(SqStack S) {
-	if (S.top == S.base) return 0;
-	else return (S->top - S->base);
+	if (StackisEmpty(S)) return 0;
+	else return (S.top - S.base);
 }
 
 void GetTop(SqStack S, char *e) {
-	if (S.top == S.base) return;
-	else e = *(S->top);
+	if (StackisEmpty(S)) return;
+	else e = *(S.top);
 }
 
 void Push(SqStack *S, char e) {
-	
+	if (StackLength(*S) >= S->stacksize) {
+		S->base = (char *)realloc(S->base, (S->stacksize + STACKINCREMENT) * sizeof(char));
+		S->top = S->base + S->stacksize;
+		S.stacksize += STACKINCREMENT;
+	}
+	*(S->top++) = e;
 }
 
-void Pop(SqStack *S) {}
-
-void StackTraverse(SqStack *S) {}
-
-
-
-int sum(int x, int y) {
-	return x + y;
+void Pop(SqStack *S, char *e) {
+	if (StackisEmpty(*S)) return;
+	*e = *(S->top--);
 }
