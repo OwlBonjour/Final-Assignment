@@ -11,12 +11,6 @@
 #define	Link		0
 #define	Thread		1
 
-typedef struct BiTNode {
-	char data;
-	struct BiTNode *lchild, *rchild, *parent;
-	PointerTag LTag, RTag;
-}BiTNode, *BiTree;
-
 Status Visit(char e) {
 	printf("%c ", e);
 	return OK;
