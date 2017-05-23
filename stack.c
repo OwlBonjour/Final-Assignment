@@ -1,15 +1,6 @@
 #include "include/stack.h"
 #include <stdlib.h>
 
-#define STACK_INIT_SIZE 100
-#define STACKINCREMENT 10
-
-typedef struct {
-	char *base;
-	char *top;
-	int stacksize;
-}SqStack;
-
 void InitStack(SqStack *S) {
 	S->base = (char *)malloc(STACK_INIT_SIZE * sizeof(char));
 	S->top = S->base;
