@@ -38,19 +38,19 @@ int StackLength(SqStack S) {
 
 void GetTop(SqStack S, char *e) {
 	if (StackisEmpty(S)) return;
-	else e = *(S.top);
+	else *e = *(S.top - 1);
 }
 
 void Push(SqStack *S, char e) {
 	if (StackLength(*S) >= S->stacksize) {
 		S->base = (char *)realloc(S->base, (S->stacksize + STACKINCREMENT) * sizeof(char));
 		S->top = S->base + S->stacksize;
-		S.stacksize += STACKINCREMENT;
+		S->stacksize += STACKINCREMENT;
 	}
 	*(S->top++) = e;
 }
 
 void Pop(SqStack *S, char *e) {
 	if (StackisEmpty(*S)) return;
-	*e = *(S->top--);
+	*e = *(--S->top);
 }
