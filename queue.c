@@ -1,18 +1,6 @@
 #include "include/queue.h"
 #include <stdlib.h>
 
-#define QUEUE_INIT_SIZE 100
-#define QUEUEINCREMENT 10
-
-typedef struct QNode {
-	char data;
-	struct QNode *next;
-}QNode;
-typedef struct {
-	QNode *front, *rear;
-	int queuesize;
-}LinkQueue;
-
 void InitQueue(LinkQueue *Q) {
 	Q->rear = Q->front = (QNode *)malloc(sizeof(QNode));
 	Q->front->next = NULL;
