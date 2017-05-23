@@ -26,23 +26,31 @@ void ClearStack(SqStack *S) {
 	S->top = S->base;
 }
 
-int StackisEmpty(SqStack *S) {
-	if (S->top == S->base) return 1;
+int StackisEmpty(SqStack S) {
+	if (S.top == S.base) return 1;
 	else return 0;
 }
 
-int StackLength(SqStack *S) {
-	if (S->top == S->base) return 0;
+int StackLength(SqStack S) {
+	if (S.top == S.base) return 0;
 	else return (S->top - S->base);
 }
 
-void GetTop(SqStack *S, char *e) {
+void GetTop(SqStack S, char *e) {
 	if (S.top == S.base) return;
 	else e = *(S->top);
 }
 
-void Push(SqStack *S) {}
+void Push(SqStack *S, char e) {
+	
+}
 
 void Pop(SqStack *S) {}
 
 void StackTraverse(SqStack *S) {}
+
+
+
+int sum(int x, int y) {
+	return x + y;
+}
