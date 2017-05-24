@@ -21,5 +21,6 @@ void DeQueue(LinkQueue *Q, char *e);
 void GetHead(LinkQueue Q, char *e);
 void DestroyQueue(LinkQueue *Q);
 void ClearQueue(LinkQueue *Q);
+void _TEST_QUEUE_(void);
 
 #endif //_QUEUE_H
