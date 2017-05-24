@@ -18,5 +18,6 @@ int StackLength(SqStack S);
 void GetTop(SqStack S, char *e);
 void Push(SqStack *S, char e);
 void Pop(SqStack *S, char *e);
+void _TEST_STACK_(void);
 
 #endif //_STACK_H
